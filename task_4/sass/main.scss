@@ -1,0 +1,70 @@
+* {
+     box-sizing: border-box; 
+  } 
+.fild{
+   position: relative;
+   background-color: green;
+   width: 1000px;
+   height: 500px;
+   margin: 5% auto;
+   border-radius: 35px;
+} 
+.ball{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   background-color: #fff;
+}
+.rabbit-hole{
+   position: absolute;
+   width: 70px;
+   height: 70px;
+   border-radius: 50%;
+   background-color: #000;
+}
+.rabbit-hole:nth-child(1){
+   top: 0;
+   left: 0;
+} 
+.rabbit-hole:nth-child(2){
+   top: 0;
+   right: 0;
+} 
+.rabbit-hole:nth-child(3){
+   bottom: 0;
+   right: 0;
+} 
+.rabbit-hole:nth-child(4){
+   bottom: 0;
+   left: 0;
+}
+button{
+   display: block;
+    font-weight: 400;
+    margin: 0 auto;
+    color: #212529;
+    outline: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid green;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    cursor: pointer;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+&:hover{
+   color: #fff;
+   background-color: #28a745;
+}
+   }
+  
+ 
+    

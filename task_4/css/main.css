@@ -1,0 +1,79 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.fild {
+  position: relative;
+  background-color: green;
+  width: 1000px;
+  height: 500px;
+  margin: 5% auto;
+  -webkit-border-radius: 35px;
+          border-radius: 35px; }
+
+.ball {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background-color: #fff; }
+
+.rabbit-hole {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background-color: #000; }
+
+.rabbit-hole:nth-child(1) {
+  top: 0;
+  left: 0; }
+
+.rabbit-hole:nth-child(2) {
+  top: 0;
+  right: 0; }
+
+.rabbit-hole:nth-child(3) {
+  bottom: 0;
+  right: 0; }
+
+.rabbit-hole:nth-child(4) {
+  bottom: 0;
+  left: 0; }
+
+button {
+  display: block;
+  font-weight: 400;
+  margin: 0 auto;
+  color: #212529;
+  outline: 0;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: transparent;
+  border: 1px solid green;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-border-radius: .25rem;
+          border-radius: .25rem;
+  cursor: pointer;
+  -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  -o-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out; }
+  button:hover {
+    color: #fff;
+    background-color: #28a745; }

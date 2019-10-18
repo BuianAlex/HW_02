@@ -2,76 +2,84 @@ window.addEventListener('load', () => {
   let startBtn = document.querySelector("#start");
   let ball = document.querySelector(".ball");
   let fild =  document.querySelector(".fild");
-  let max_x = fild.clientWidth;
-  let max_y= fild.clientHeight;
-  let ball_x = ball.offsetLeft + 25;
-let ball_y = ball.offsetTop + 25;
-  console.log( max_x+"  "+ max_y);
-  
+  let max_x = fild.clientWidth - 25 ;
+  let max_y= fild.clientHeight -25 ;
+  let ball_x = ball.offsetLeft;
+  let ball_y = ball.offsetTop ;
+  let timer = 0;
+  let is_run = false;
   startBtn.addEventListener("click",(e) => {
-    start();
+    if(!is_run){
+      start();
+      is_run = !is_run;
+       e.target.classList.toggle('red-btn');
+       e.target.textContent = "Stop";
+    }
+    else{
+      is_run = !is_run; 
+    }
+    
   })
 
 
 function start() {
-    //clearInterval(id);
-    // var elem = document.querySelector(".ball"); 
-    // let newPos_x = Math.floor(Math.random() * (max_x - 0 + 1) ) + 0;
-    // let newPos_y = Math.floor(Math.random() * (max_y - 0 + 1) ) + 0;
-    
-    let speed = 0;
-    let id = setInterval(frame, speed);
-    let direvtion_x = Math.random() < 0.5 ? -1 : 1;
-    let direvtion_y = Math.random() < 0.5 ? -1 : 1;
-    function frame() {  
+    let speed = 10;
+    let speedShift = 0.5;
+    let rend = setInterval(frame, 20);
+    let direсtion_x = Math.random() < 0.5 ? -1 : 1;
+    let direсtion_y = Math.random() < 0.5 ? -1 : 1;
+    function frame() {
+      if(!is_run) stop();
+      if(speed <= 0) stop();
+      timer++;
+      speed -= timer / 11111;        
       if ( ball_x >= max_x){
-          direvtion_x = -1;
-          ballMove(direvtion_x,direvtion_y);
+          direсtion_x = -1;
+          ballMove(direсtion_x, direсtion_y, speed);
 
-          speed += 1;
+          speed -= speedShift;
       }  
       else if (  ball_y >= max_y) {
-          direvtion_y = -1;
+          direсtion_y = -1;
 
-          ballMove(direvtion_x, direvtion_y);
-
-          speed += 1;
-          
-        //clearInterval(id);
+          ballMove(direсtion_x, direсtion_y, speed);
+          speed -= speedShift;
       } 
-      else if (  ball_y <= 0) {
-          direvtion_y = 1;
-          ballMove(direvtion_x, direvtion_y);
+      else if (  ball_y <= 25) {
+          direсtion_y = 1;
+          ballMove(direсtion_x, direсtion_y, speed);
 
-          speed += 1;
-        //clearInterval(id);
+          speed -= speedShift;
+
       } 
-      else if (  ball_x <= 0) {
-          direvtion_x = 1;
-          ballMove(direvtion_x, direvtion_y);
-         
-          //id = setInterval(frame, speed);
-           speed += 1;
-        //clearInterval(id);
+      else if (  ball_x <= 25) {
+          direсtion_x = 1;
+          ballMove(direсtion_x, direсtion_y, speed);
+
+           speed -= speedShift;
+
       } 
       else {
-        ballMove(direvtion_x, direvtion_y)
+        ballMove(direсtion_x, direсtion_y, speed)
       }
-    //   if(speed === 17){
-    //      clearInterval(id);
-    //   }
-       console.log('speed='+speed);
+    }
+    function stop(){
+      clearInterval(rend);
+      is_run = false; 
+      startBtn.classList.toggle('red-btn');
+      startBtn.textContent = "Click Me!";
     }
    
     
   }
-  function ballMove(direvtion_x, direvtion_y) {
-      console.log(direvtion_x+' '+direvtion_y);
-      
-    ball_x += direvtion_x; 
-    ball_y += direvtion_y;
+  function ballMove(direсtion_x, direсtion_y, speed) {
+    ball_x += direсtion_x*speed; 
+    ball_y += direсtion_y*speed;
     ball.style.top = ball_y + "px"; 
     ball.style.left =  ball_x + "px";
+  }
+  function blackHole(){
+    //TоDo
   }
 
 

@@ -22,15 +22,18 @@
   height: 50px;
   -webkit-border-radius: 50%;
           border-radius: 50%;
-  background-color: #fff; }
+  background-color: #fff;
+  z-index: 2; }
 
 .rabbit-hole {
+  display: none;
   position: absolute;
   width: 70px;
   height: 70px;
   -webkit-border-radius: 50%;
           border-radius: 50%;
-  background-color: #000; }
+  background-color: #000;
+  z-index: 1; }
 
 .rabbit-hole:nth-child(1) {
   top: 0;
@@ -50,6 +53,8 @@
 
 button {
   display: block;
+  width: 150px;
+  height: 50px;
   font-weight: 400;
   margin: 0 auto;
   color: #212529;
@@ -77,3 +82,9 @@ button {
   button:hover {
     color: #fff;
     background-color: #28a745; }
+
+.red-btn {
+  border: 1px solid red; }
+  .red-btn:hover {
+    color: #fff;
+    background-color: red; }
